@@ -1,4 +1,8 @@
-﻿namespace WebApplicationFlatFile
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using System.Security.Cryptography;
+
+namespace WebApplicationFlatFile
 {
     public class Startup
     {
@@ -11,6 +15,10 @@
         {
             services.AddControllers();
             services.AddCors();
+            services.TryAddSingleton<ISystemClock, SystemClock>();
+
+            //Service JWT
+            //var key = new SymmetricSecurityKey()
 
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -26,6 +34,13 @@
                 .AllowAnyMethod()
                 .AllowAnyMethod()
                 );
+            if (env.IsDevelopment())
+            {
+
+            }
+            app.UseAuthentication();
+            app.UseRouting();
+            app.UseSwagger();
         }
     }
 }
