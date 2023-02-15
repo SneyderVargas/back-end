@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using WebApplicationFlatFile.Data;
 using WebApplicationFlatFile.Data.Entities;
+using WebApplicationFlatFile.Services.Email;
 using WebApplicationFlatFile.Services.Security;
 
 namespace WebApplicationFlatFile
@@ -55,6 +56,7 @@ namespace WebApplicationFlatFile
                 };
             });
             services.AddScoped<IJwtGenerator, JwtGenerator>();
+            services.AddScoped<IEmailService, MailkitEmailService>();
             //services.TryAddSingleton<ISystemClock, SystemClock>();
 
             //Service JWT
