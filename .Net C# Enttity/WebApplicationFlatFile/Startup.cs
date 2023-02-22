@@ -57,6 +57,7 @@ namespace WebApplicationFlatFile
             });
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IEmailService, MailkitEmailService>();
+            services.AddScoped<>();
             //services.TryAddSingleton<ISystemClock, SystemClock>();
 
             //Service JWT
