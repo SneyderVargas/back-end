@@ -19,6 +19,8 @@ namespace WebApplicationFlatFile.Data
             UserEntity.OnModelCreating(modelBuilder);
             RoleEntity.OnModelCreating(modelBuilder);
             AdmEmployeeEntity.OnModelCreating(modelBuilder);
+            AdmEmailEntity.OnModelCreating(modelBuilder);
+            UserCompanyEntity.OnModelCreating(modelBuilder);
         }
         private MySqlConnection GetConnection()
         {
@@ -29,6 +31,8 @@ namespace WebApplicationFlatFile.Data
             optionsBuilder.UseMySQL(GetConnection());
         }
         public DbSet<AdmEmployeeEntity> AdmEmployeeEntities { get; set; }
+        public DbSet<AdmEmailEntity> AdmEmailEntities { get; set; }
+        public DbSet<UserCompanyEntity> userCompanyEntities { get; set; }
 
     }
 }
