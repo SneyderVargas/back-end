@@ -1,0 +1,5 @@
+CREATE TABLE adm.users (
+	id serial primary key,
+	"name" varchar NULL,
+	surname varchar NULL
+);
