@@ -1,28 +1,25 @@
 package com.market.place.persistence;
 
-import com.market.place.domain.UserItem;
+import com.market.place.domain.UserDomain;
 import com.market.place.domain.repository.UserRepository;
 import com.market.place.persistence.crud.UserCrudRepository;
-import com.market.place.persistence.entity.User;
+import com.market.place.persistence.entity.UserEntity;
 import com.market.place.persistence.mapper.UserItemMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Repository
 public class UsersRepository implements UserRepository {
     @Autowired
     private UserCrudRepository userCrudRepository;
     @Autowired
-    private UserItemMapper userItemMapper;
+    private UserItemMapper mapper;
     @Override
-    public List<UserItem> getAll() {
-        List<User> userItems = (List<User>) userCrudRepository.findAll();
-        return userItemMapper.toUsersItem(userItems);
+    public List<UserDomain> getAll() {
+        List<UserEntity> usersDomain = (List<UserEntity>) userCrudRepository.findAll();
+        return mapper.toUsersDomain(usersDomain);
     }
 
-    @Override
-    public Optional<List<UserItem>> getById(String clienteId) {
-        return Optional.empty();
-    }
 }

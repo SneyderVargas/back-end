@@ -1,12 +1,10 @@
 package com.market.place.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "users", schema = "adm")
+public class UserEntity {
     @Id
     private Long id;
     private String name;
