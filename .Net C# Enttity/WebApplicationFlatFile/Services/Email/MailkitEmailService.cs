@@ -1,9 +1,9 @@
 ﻿using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using WebApplicationFlatFile.Dtos.Email;
+using AccountControl.Dtos.Email;
 
-namespace WebApplicationFlatFile.Services.Email
+namespace AccountControl.Services.Email
 {
     public class MailkitEmailService : IEmailService
     {

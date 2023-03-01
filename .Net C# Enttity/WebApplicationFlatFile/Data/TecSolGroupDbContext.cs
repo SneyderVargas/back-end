@@ -2,9 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 using System.Reflection.Emit;
-using WebApplicationFlatFile.Data.Entities;
+using AccountControl.Data.Entities;
+using AccountControll.Data.Entities;
 
-namespace WebApplicationFlatFile.Data
+namespace AccountControl.Data
 {
     public class TecSolGroupDbContext: IdentityDbContext<UserEntity, RoleEntity, string>
     {
@@ -21,6 +22,7 @@ namespace WebApplicationFlatFile.Data
             AdmEmployeeEntity.OnModelCreating(modelBuilder);
             AdmEmailEntity.OnModelCreating(modelBuilder);
             UserCompanyEntity.OnModelCreating(modelBuilder);
+            AdmUsersEntity.OnModelCreating(modelBuilder);
         }
         private MySqlConnection GetConnection()
         {
@@ -33,6 +35,7 @@ namespace WebApplicationFlatFile.Data
         public DbSet<AdmEmployeeEntity> AdmEmployeeEntities { get; set; }
         public DbSet<AdmEmailEntity> AdmEmailEntities { get; set; }
         public DbSet<UserCompanyEntity> userCompanyEntities { get; set; }
+        public DbSet<AdmUsersEntity> admUsersEntities { get; set; }
 
     }
 }

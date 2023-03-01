@@ -1,6 +1,6 @@
-﻿using WebApplicationFlatFile.Dtos.Email;
+﻿using AccountControl.Dtos.Email;
 
-namespace WebApplicationFlatFile.Services.Email
+namespace AccountControl.Services.Email
 {
     public interface IEmailService
     {

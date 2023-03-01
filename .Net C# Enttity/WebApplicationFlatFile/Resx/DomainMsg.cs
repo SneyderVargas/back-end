@@ -1,6 +1,7 @@
-﻿using System.Text;
+﻿using AccountControll.Domain.Models;
+using System.Text;
 
-namespace WebApplicationFlatFile.Resx
+namespace AccountControl.Resx
 {
     public class DomainMsg
     {

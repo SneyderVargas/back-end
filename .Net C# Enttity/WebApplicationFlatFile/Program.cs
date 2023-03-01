@@ -23,10 +23,15 @@
 //app.MapControllers();
 
 //app.Run();
-using WebApplicationFlatFile;
+using AccountControl;
 
 var builder = WebApplication.CreateBuilder(args);
-// Add services
+
 var startup = new Startup(builder.Configuration);
 startup.ConfigureServices(builder.Services);
+
 var app = builder.Build();
+var lf = app.Services.GetRequiredService<ILoggerFactory>();
+
+startup.Configure(app, builder.Environment,lf);
+app.Run();

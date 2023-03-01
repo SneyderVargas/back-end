@@ -1,5 +1,10 @@
+-- create table postgres
 CREATE TABLE adm.users (
 	id serial primary key,
 	"name" varchar NULL,
 	surname varchar NULL
 );
+-- edit tablet 
+ALTER TABLE adm.users ADD active int NOT NULL DEFAULT 0;
+COMMENT ON COLUMN adm.users.active IS 'status user 0 not avtive or 1 active user';
+

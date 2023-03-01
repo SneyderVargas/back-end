@@ -3,10 +3,10 @@ using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using WebApplicationFlatFile.Data.Entities;
-using WebApplicationFlatFile.Dtos.Security;
+using AccountControl.Data.Entities;
+using AccountControl.Dtos.Security;
 
-namespace WebApplicationFlatFile.Services.Security
+namespace AccountControl.Services.Security
 {
     public class JwtGenerator: IJwtGenerator
     {

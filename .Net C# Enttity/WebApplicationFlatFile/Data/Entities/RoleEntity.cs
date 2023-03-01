@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApplicationFlatFile.Data.Entities
+namespace AccountControl.Data.Entities
 {
     public class RoleEntity: IdentityRole
     {

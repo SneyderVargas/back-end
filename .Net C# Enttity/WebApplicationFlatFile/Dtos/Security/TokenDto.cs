@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 
-namespace WebApplicationFlatFile.Dtos.Security
+namespace AccountControl.Dtos.Security
 {
     public class TokenDto
     {

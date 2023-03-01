@@ -1,4 +1,4 @@
-namespace WebApplicationFlatFile
+namespace AccountControl
 {
     public class WeatherForecast
     {

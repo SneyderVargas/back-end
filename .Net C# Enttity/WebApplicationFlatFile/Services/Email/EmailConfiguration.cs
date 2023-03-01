@@ -1,4 +1,4 @@
-﻿namespace WebApplicationFlatFile.Services.Email
+﻿namespace AccountControl.Services.Email
 {
     public class EmailConfiguration
     {

@@ -9,6 +9,15 @@ public class UserEntity {
     private Long id;
     private String name;
     private String surname;
+    private int active;
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
 
     public Long getId() {
         return id;

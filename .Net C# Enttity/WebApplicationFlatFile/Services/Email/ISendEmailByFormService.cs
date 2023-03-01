@@ -1,6 +1,6 @@
-﻿using WebApplicationFlatFile.Data.Entities;
+﻿using AccountControl.Data.Entities;
 
-namespace WebApplicationFlatFile.Services.Email
+namespace AccountControl.Services.Email
 {
     public interface ISendEmailByFormService
     {

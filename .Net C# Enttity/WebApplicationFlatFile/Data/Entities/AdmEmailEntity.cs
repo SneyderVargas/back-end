@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace WebApplicationFlatFile.Data.Entities
+namespace AccountControl.Data.Entities
 {
     public class AdmEmailEntity
     {

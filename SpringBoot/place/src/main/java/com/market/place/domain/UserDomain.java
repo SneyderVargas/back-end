@@ -5,6 +5,15 @@ public class UserDomain {
     private int userId;
     private String userName;
     private String userSurname;
+    private int userActive;
+
+    public int getUserActive() {
+        return userActive;
+    }
+
+    public void setUserActive(int userActive) {
+        this.userActive = userActive;
+    }
 
     public int getUserId() {
         return userId;

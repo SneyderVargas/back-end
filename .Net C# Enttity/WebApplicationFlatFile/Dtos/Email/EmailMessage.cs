@@ -1,4 +1,4 @@
-﻿namespace WebApplicationFlatFile.Dtos.Email
+﻿namespace AccountControl.Dtos.Email
 {
     public class EmailMessage
     {

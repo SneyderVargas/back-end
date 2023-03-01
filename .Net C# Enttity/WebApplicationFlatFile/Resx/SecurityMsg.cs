@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace WebApplicationFlatFile.Resx
+namespace AccountControl.Resx
 {
     public class SecurityMsg
     {

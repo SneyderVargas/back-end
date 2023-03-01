@@ -21,5 +21,11 @@ public class UsersRepository implements UserRepository {
         List<UserEntity> usersDomain = (List<UserEntity>) userCrudRepository.findAll();
         return mapper.toUsersDomain(usersDomain);
     }
+    @Override
+    public Optional<List<UserDomain>> getAllUsersActive(int active){
+        Optional<List<UserEntity>> users = userCrudRepository.findByActive(active);
+        return users.map(user -> mapper.toUsersDomain(user));
+
+    }
 
 }
