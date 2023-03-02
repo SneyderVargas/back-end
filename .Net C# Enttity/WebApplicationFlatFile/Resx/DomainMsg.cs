@@ -5,6 +5,8 @@ namespace AccountControl.Resx
 {
     public class DomainMsg
     {
+        public const string Success = "Su solicitud fue recibida exitosamente";
+        public const string CreateAdmUserExist = "Correo ya esta registrado en el sistema";
         public const string CompanyCreationSucceeded = "Empresa registrada satisfactoriamente";
         public const string NamesRequiredValidation = "Nombres requeridos";
         public const string NamesLengthValidation = "Nombres deben tener entre 1 y 100 caracteres";

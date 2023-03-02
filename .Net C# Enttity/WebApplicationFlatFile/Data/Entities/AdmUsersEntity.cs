@@ -8,7 +8,7 @@ namespace AccountControll.Data.Entities
         public string Email { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-        public string TypeUsers { get; set; }
+        public int TypeUsers { get; set; }
         public string ? Data {get; set;}
         public DateTime LastLogin { get; set; }
         public int Active { get; set; }

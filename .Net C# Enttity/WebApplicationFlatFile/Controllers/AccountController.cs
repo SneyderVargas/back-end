@@ -26,10 +26,22 @@ namespace AccountControll.Controllers
             _accountServices = accountServices;
             _jwtGenerator = jwtGenerator;
         }
+        [HttpPost]
         public async Task<IActionResult> CreateAdmUser([FromBody] CreateAdmUserDto param)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(new ApiErrorDto(ModelState));
+        {            
+            try
+            {
+                AdmUsersEntity user = _mapper.Map<AdmUsersEntity>(param);
+                if (!ModelState.IsValid)
+                    return BadRequest(new ApiErrorDto(ModelState));
+                var (Succeeded, Message) = await _accountServices.CreateAdmUser(user);
+                return Ok(ApiCollectionResponseDto.CreateOk(Message, null, 0));
+            }
+            catch(Exception ex)
+            {
+                var err = ex;
+                return Ok(ApiCollectionResponseDto.CreateOk(err.Message, null, 0));
+            }
 
         }
         [HttpGet]
@@ -59,9 +71,7 @@ namespace AccountControll.Controllers
                 //return BadRequest(new ApiErrorDto(ModelState));
                 var err = ex;
                 return Ok(ApiCollectionResponseDto.CreateOk(err.Message, null, 0));
-            }
-
-            
+            }           
 
         }
 

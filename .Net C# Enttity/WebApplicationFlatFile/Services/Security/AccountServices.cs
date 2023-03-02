@@ -25,8 +25,13 @@ namespace AccountControll.Services.Security
             List<AdmUsersEntity> users = new List<AdmUsersEntity>();
             try
             {
+                User.CreateRegisterDate = DateTime.Now;
+                User.LastLogin = DateTime.Now;
+                User.UpdateRegisterDate = DateTime.Now;
+                User.TypeUsers = 1;
+
                 users = await _dbContext.admUsersEntities.Where(x => x.Email == User.Email && x.Tenancys == User.Tenancys).ToListAsync();
-                if (users.Count <= 0)
+                if (users.Count > 0)
                     return (false, DomainMsg.CreateAdmUserExist.ToString());
                 using (var transac = _dbContext.Database.BeginTransaction())
                 {

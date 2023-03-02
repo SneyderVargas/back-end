@@ -1,19 +1,17 @@
-﻿namespace AccountControll.Dtos.Account
+﻿using AccountControl.Resx;
+using System.ComponentModel.DataAnnotations;
+
+namespace AccountControll.Dtos.Account
 {
     public class CreateAdmUserDto
     {
-        public int Id { get; set; }
+        [Required(ErrorMessage = SecurityMsg.UserNameRequiredValidation)]
         public string Email { get; set; }
+        [Required(ErrorMessage = SecurityMsg.UserNameRequiredValidation)]
         public string Name { get; set; }
+        [Required(ErrorMessage = SecurityMsg.UserNameRequiredValidation)]
         public string Password { get; set; }
-        public string TypeUsers { get; set; }
-        public string? Data { get; set; }
-        public DateTime LastLogin { get; set; }
-        public int Active { get; set; }
-        public DateTime CreateRegisterDate { get; set; }
-        public DateTime UpdateRegisterDate { get; set; }
-        public int ActiveRegister { get; set; }
+        [Required(ErrorMessage = SecurityMsg.UserNameRequiredValidation)]
         public int Tenancys { get; set; }
-        public string? Steps { get; set; }
     }
 }

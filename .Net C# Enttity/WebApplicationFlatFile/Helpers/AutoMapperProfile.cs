@@ -11,6 +11,7 @@ namespace AccountControl.Helpers
         public AutoMapperProfile()
         {
             CreateMap<AdmUserDto, AdmUsersEntity>().ReverseMap();
+            CreateMap<AdmUsersEntity, CreateAdmUserDto>().ReverseMap();
             //CreateMap<User, UserEntity>().ReverseMap();
             //CreateMap<UserDto, User>().ReverseMap();
             //CreateMap<User, CreateUserRequestDto>().ReverseMap();
