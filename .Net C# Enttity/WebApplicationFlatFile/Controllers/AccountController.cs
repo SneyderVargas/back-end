@@ -27,7 +27,7 @@ namespace AccountControll.Controllers
             _jwtGenerator = jwtGenerator;
         }
         [HttpPost]
-        public async Task<IActionResult> CreateAdmUser([FromBody] CreateAdmUserDto param)
+        public async Task<IActionResult> CreateAdmUser([FromBody] CreateAdmUserRequest param)
         {            
             try
             {

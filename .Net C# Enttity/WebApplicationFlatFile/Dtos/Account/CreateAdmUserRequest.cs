@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AccountControll.Dtos.Account
 {
-    public class CreateAdmUserDto
+    public class CreateAdmUserRequest
     {
         [Required(ErrorMessage = SecurityMsg.UserNameRequiredValidation)]
         public string Email { get; set; }
