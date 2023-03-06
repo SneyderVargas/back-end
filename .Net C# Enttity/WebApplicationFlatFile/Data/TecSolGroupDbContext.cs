@@ -23,6 +23,7 @@ namespace AccountControl.Data
             AdmEmailEntity.OnModelCreating(modelBuilder);
             UserCompanyEntity.OnModelCreating(modelBuilder);
             AdmUsersEntity.OnModelCreating(modelBuilder);
+            AdmTenancysEntity.OnModelCreating(modelBuilder);
         }
         private MySqlConnection GetConnection()
         {
@@ -36,6 +37,7 @@ namespace AccountControl.Data
         public DbSet<AdmEmailEntity> AdmEmailEntities { get; set; }
         public DbSet<UserCompanyEntity> userCompanyEntities { get; set; }
         public DbSet<AdmUsersEntity> admUsersEntities { get; set; }
+        public DbSet<AdmTenancysEntity> admTenancysEntities { get; set; }
 
     }
 }
