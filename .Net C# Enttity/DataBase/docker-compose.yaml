@@ -9,8 +9,8 @@ services:
     ports:
         - "13307:3306"    
     environment:
-        MYSQL_DATABASE: test_db
-        MYSQL_ROOT_PASSWORD: Sneyder868120.
+        MYSQL_DATABASE: db_proyect
+        MYSQL_ROOT_PASSWORD: db_proyect12345
     volumes:
         - ./schemas/db:/var/lib/mysql:rw
     networks:
