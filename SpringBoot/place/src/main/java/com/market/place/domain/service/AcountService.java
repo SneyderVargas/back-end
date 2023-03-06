@@ -18,4 +18,5 @@ public class AcountService {
     public Optional<List<UserDomain>> getAllUsersActive(int active){
         return userRepository.getAllUsersActive(active);
     }
+    public UserDomain save(UserDomain userDomain){return userRepository.save(userDomain);}
 }

@@ -27,5 +27,10 @@ public class UsersRepository implements UserRepository {
         return users.map(user -> mapper.toUsersDomain(user));
 
     }
+    @Override
+    public UserDomain save(UserDomain userDomain) {
+        UserEntity user = mapper.toUserEntity(userDomain);
+        return mapper.toUserDomain(userCrudRepository.save(user));
+    }
 
 }

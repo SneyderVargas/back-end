@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface UserRepository {
     List<UserDomain> getAll();
-
     Optional<List<UserDomain>> getAllUsersActive(int active);
+    UserDomain save(UserDomain userDomain);
 }
