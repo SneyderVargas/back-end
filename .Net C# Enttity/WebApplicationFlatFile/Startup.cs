@@ -65,6 +65,7 @@ namespace AccountControl
             services.AddScoped<IEmailService, MailkitEmailService>();
             services.AddScoped<ISendEmailByFormService, SendEmailByFormService>();
             services.AddScoped<IAccountServices, AccountServices>();
+            services.AddScoped<ITenancysServices, TenancysServices>();
 
             //services.AddScoped<IJwtGenerador, JwtGenerador>();
             //services.AddScoped<IEmailService, MailKitEmailService>();

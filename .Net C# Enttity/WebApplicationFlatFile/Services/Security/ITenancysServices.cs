@@ -1,11 +1,11 @@
-﻿namespace AccountControll.Services.Security
+﻿using AccountControll.Data.Entities;
+using AccountControll.Dtos;
+
+namespace AccountControll.Services.Security
 {
     public interface ITenancysServices
     {
-        Task<(bool Succeeded, string Message)> Get();
-        Task<(bool Succeeded, string Message)> GetAll();
-        Task<(bool Succeeded, string Message)> Create();
-        Task<(bool Succeeded, string Message)> Update();
-        Task<(bool Succeeded, string Message)> Delete();
+        Task<(bool Succeeded, string Message)> Create(AdmTenancysEntity Tenancys);
+        Task<(bool Succeeded, string Message, Response<List<AdmTenancysEntity>> response)> GetAll(PaginationFilter filter);
     }
 }

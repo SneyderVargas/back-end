@@ -4,6 +4,7 @@ namespace AccountControl.Resx
 {
     public class SecurityMsg
     {
+        public const string RequiredDefault = "El Campo es requierido";
         public const string IdRequiredValidation = "Id requerido";
         public const string UserNameRequiredValidation = "Nombre de usuario requerido";
         public const string UserLoggedInExt = "Usuario externo se encuentra logueado en sistema";

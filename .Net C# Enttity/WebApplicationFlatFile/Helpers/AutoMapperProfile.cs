@@ -12,6 +12,8 @@ namespace AccountControl.Helpers
         {
             CreateMap<AdmUserDto, AdmUsersEntity>().ReverseMap();
             CreateMap<AdmUsersEntity, CreateAdmUserRequest>().ReverseMap();
+            CreateMap<AdmTenancysEntity, CreateAdmTenancysRequest>().ReverseMap();
+            CreateMap<AdmTenancysDto, AdmTenancysEntity>().ReverseMap();
             //CreateMap<User, UserEntity>().ReverseMap();
             //CreateMap<UserDto, User>().ReverseMap();
             //CreateMap<User, CreateUserRequestDto>().ReverseMap();

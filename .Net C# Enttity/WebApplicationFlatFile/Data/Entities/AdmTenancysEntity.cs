@@ -25,6 +25,7 @@ namespace AccountControll.Data.Entities
                 .HasMaxLength(200)
                 .HasColumnName("sudDominio");
             entity.Property(x => x.ActiveRegistre)
+                .HasColumnName("activeRegister")
                 .HasDefaultValue(1);
 
         }
