@@ -1,6 +1,8 @@
 package com.market.place.domain.repository;
 
 import com.market.place.domain.UserDomain;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;

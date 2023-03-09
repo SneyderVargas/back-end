@@ -3,6 +3,7 @@ package com.market.place.domain.service;
 import com.market.place.domain.UserDomain;
 import com.market.place.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -3,6 +3,7 @@ package com.market.place.persistence;
 import com.market.place.domain.UserDomain;
 import com.market.place.domain.repository.UserRepository;
 import com.market.place.persistence.crud.UserCrudRepository;
+import com.market.place.persistence.crud.UserPaginationRepository;
 import com.market.place.persistence.entity.UserEntity;
 import com.market.place.persistence.mapper.UserItemMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import java.util.Optional;
 public class UsersRepository implements UserRepository {
     @Autowired
     private UserCrudRepository userCrudRepository;
+    @Autowired
+    private UserPaginationRepository userPaginationRepository;
     @Autowired
     private UserItemMapper mapper;
     @Override
