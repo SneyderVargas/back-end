@@ -7,6 +7,8 @@ import com.market.place.persistence.crud.UserPaginationRepository;
 import com.market.place.persistence.entity.UserEntity;
 import com.market.place.persistence.mapper.UserItemMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -35,5 +37,6 @@ public class UsersRepository implements UserRepository {
         UserEntity user = mapper.toUserEntity(userDomain);
         return mapper.toUserDomain(userCrudRepository.save(user));
     }
+
 
 }

@@ -2,8 +2,10 @@ package com.market.place.domain.service;
 
 import com.market.place.domain.UserDomain;
 import com.market.place.domain.repository.UserRepository;
+import com.market.place.persistence.crud.UserPaginationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
