@@ -24,7 +24,7 @@ public class AcountController {
     public ResponseEntity<List<UserDomain>> getAll(){
         return new ResponseEntity<>(acountService.getAll(), HttpStatus.OK);
     }
-    
+
     @GetMapping("/active/{active}")
     public  ResponseEntity<List<UserDomain>> getAllUsersActive(@PathVariable("active") int active){
         return acountService.getAllUsersActive(active)

@@ -38,5 +38,11 @@ public class UsersRepository implements UserRepository {
         return mapper.toUserDomain(userCrudRepository.save(user));
     }
 
+    @Override
+    public Page<UserDomain> getPagination(Pageable pageable) {
+        Page<UserEntity> usersDomainPage = (Page<UserEntity>) userPaginationRepository.findAll(pageable);
+        return mapper.toUsersDomainPage(usersDomainPage);
+    }
+
 
 }

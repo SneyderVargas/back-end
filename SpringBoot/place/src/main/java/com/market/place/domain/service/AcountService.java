@@ -22,4 +22,5 @@ public class AcountService {
         return userRepository.getAllUsersActive(active);
     }
     public UserDomain save(UserDomain userDomain){return userRepository.save(userDomain);}
+    public Page<UserDomain> getPagination(Pageable pageable){ return userRepository.getPagination(pageable);}
 }
