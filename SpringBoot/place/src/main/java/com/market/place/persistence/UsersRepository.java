@@ -39,9 +39,9 @@ public class UsersRepository implements UserRepository {
     }
 
     @Override
-    public Page<UserDomain> getPagination(Pageable pageable) {
+    public Optional<Page<UserEntity>> getPagination(Pageable pageable) {
         Page<UserEntity> usersDomainPage = (Page<UserEntity>) userPaginationRepository.findAll(pageable);
-        return mapper.toUsersDomainPage(usersDomainPage);
+        return Optional.of(usersDomainPage);
     }
 
 

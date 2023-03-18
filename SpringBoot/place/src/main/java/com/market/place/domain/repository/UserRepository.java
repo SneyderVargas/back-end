@@ -1,6 +1,7 @@
 package com.market.place.domain.repository;
 
 import com.market.place.domain.UserDomain;
+import com.market.place.persistence.entity.UserEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -11,5 +12,5 @@ public interface UserRepository {
     List<UserDomain> getAll();
     Optional<List<UserDomain>> getAllUsersActive(int active);
     UserDomain save(UserDomain userDomain);
-    Page<UserDomain> getPagination(Pageable pageable);
+    Optional<Page<UserEntity>> getPagination(Pageable pageable);
 }
