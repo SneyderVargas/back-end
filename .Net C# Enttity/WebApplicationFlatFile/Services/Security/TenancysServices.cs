@@ -20,7 +20,6 @@ namespace AccountControll.Services.Security
             _configuration = configuration;
             _dbContext = dbContext;
         }
-
         public async Task<(bool Succeeded, string Message)> Create(AdmTenancysEntity Tenancys)
         {
             try
@@ -35,8 +34,6 @@ namespace AccountControll.Services.Security
                 return (false, ex.Message);
             }
         }
-
-
         public async Task<(bool Succeeded, string Message, Response<List<AdmTenancysEntity>> response)> GetAll(PaginationFilter filter)
         {
             try
