@@ -44,4 +44,12 @@ public class AcountController {
                 .map(paginacion -> new ResponseEntity<>(paginacion, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable("id") int userId){
+        if (acountService.delete(userId)) {
+            return new ResponseEntity(HttpStatus.OK);
+        } else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+    }
 }

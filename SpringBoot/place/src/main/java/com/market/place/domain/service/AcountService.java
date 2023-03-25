@@ -24,4 +24,13 @@ public class AcountService {
     }
     public UserDomain save(UserDomain userDomain){return userRepository.save(userDomain);}
     public Optional<Page<UserEntity>> getPagination(Pageable pageable){ return userRepository.getPagination(pageable);}
+    public Optional<UserDomain> getUser(int userId) {
+        return userRepository.getUser(userId);
+    }
+    public boolean delete(int userId) {
+        return getUser(userId).map(user -> {
+            userRepository.delete(userId);
+            return true;
+        }).orElse(false);
+    }
 }

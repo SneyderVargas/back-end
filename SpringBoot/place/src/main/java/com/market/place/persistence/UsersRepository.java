@@ -21,6 +21,12 @@ public class UsersRepository implements UserRepository {
     private UserPaginationRepository userPaginationRepository;
     @Autowired
     private UserItemMapper mapper;
+
+    @Override
+    public Optional<UserDomain> getUser(int userId) {
+        return userCrudRepository.findById(userId).map(user -> mapper.toUserDomain(user));
+    }
+
     @Override
     public List<UserDomain> getAll() {
         List<UserEntity> usersDomain = (List<UserEntity>) userCrudRepository.findAll();
@@ -42,6 +48,11 @@ public class UsersRepository implements UserRepository {
     public Optional<Page<UserEntity>> getPagination(Pageable pageable) {
         Page<UserEntity> usersDomainPage = (Page<UserEntity>) userPaginationRepository.findAll(pageable);
         return Optional.of(usersDomainPage);
+    }
+
+    @Override
+    public void delete(int userId) {
+        userCrudRepository.deleteById(userId);
     }
 
 

@@ -9,8 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserRepository {
+    Optional<UserDomain> getUser(int userId);
     List<UserDomain> getAll();
     Optional<List<UserDomain>> getAllUsersActive(int active);
     UserDomain save(UserDomain userDomain);
     Optional<Page<UserEntity>> getPagination(Pageable pageable);
+    void delete(int userId);
 }
