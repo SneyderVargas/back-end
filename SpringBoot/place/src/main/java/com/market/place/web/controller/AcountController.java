@@ -45,7 +45,7 @@ public class AcountController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable("id") int userId){
+    public ResponseEntity delete(@PathVariable("id") Long userId){
         if (acountService.delete(userId)) {
             return new ResponseEntity(HttpStatus.OK);
         } else {

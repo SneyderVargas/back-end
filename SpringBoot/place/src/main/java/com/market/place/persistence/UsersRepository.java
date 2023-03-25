@@ -23,7 +23,7 @@ public class UsersRepository implements UserRepository {
     private UserItemMapper mapper;
 
     @Override
-    public Optional<UserDomain> getUser(int userId) {
+    public Optional<UserDomain> getUser(Long userId) {
         return userCrudRepository.findById(userId).map(user -> mapper.toUserDomain(user));
     }
 
@@ -51,7 +51,7 @@ public class UsersRepository implements UserRepository {
     }
 
     @Override
-    public void delete(int userId) {
+    public void delete(Long userId) {
         userCrudRepository.deleteById(userId);
     }
 
