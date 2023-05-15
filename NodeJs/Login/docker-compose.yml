@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web-tec-sol-group:
+    container_name: tec-sol-group
+    restart: always 
+    build: .
+    ports:
+      - "5000:3000"
+    volumes:
+      - .:/usr/src/app

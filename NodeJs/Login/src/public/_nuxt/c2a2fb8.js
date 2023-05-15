@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{546:function(e,n,t){"use strict";t.r(n);var o={name:"IndexPage",layout:"webPage",mounted:function(){this.$router.push("/web")}},l=t(30),component=Object(l.a)(o,(function(){var e=this.$createElement;return(this._self._c||e)("div")}),[],!1,null,null,null);n.default=component.exports}}]);
