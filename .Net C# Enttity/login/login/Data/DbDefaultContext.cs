@@ -17,6 +17,12 @@ namespace login.Data
         {
             base.OnModelCreating(modelBuilder);
             //UserEntity.OnModelCreating(modelBuilder);
+            PermissionEntity.OnModelCreating(modelBuilder);
+            UserCompanyEntity.OnModelCreating(modelBuilder);
+            CompanyEntity.OnModelCreating(modelBuilder);
+            UserRolesEntity.OnModelCreating(modelBuilder);
+            PermissionUserEntity.OnModelCreating(modelBuilder);
+            PermissionUserEntity.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,5 +33,10 @@ namespace login.Data
             return new MySqlConnection(_connectionString);
         }
         //public DbSet<ParameterEntity> Parameters { get; set; }
+        public DbSet<PermissionEntity> permissionEntities { get; set; }
+        public DbSet<UserCompanyEntity> userCompanyEntities { get; set; }
+        public DbSet<CompanyEntity> companyEntities { get; set; }
+        public DbSet<UserRolesEntity> userRolesEntities { get; set; }
+        public DbSet<PermissionUserEntity> permissionUserEntities { get; set; }
     }
 }
