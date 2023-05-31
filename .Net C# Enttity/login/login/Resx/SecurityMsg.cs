@@ -9,5 +9,7 @@
         public const string UserPasswordInvalid = "Nombre de usuario y/o contraseña inválidos";
         public const string UserInactive = "Usuario se encuentra inactivo";
         public const string UserLoggedIn = "No se puede ingresar al sistema porque usuario se encuentra con sesión iniciada en otro computador/navegador";
+        public const string AccountLoginError = "Error - Error en proceso de autenticación";
+        public const string TokenError = "Se ha presentado un error en la generación del token";
     }
 }
