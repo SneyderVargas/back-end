@@ -61,6 +61,7 @@ namespace login
             });
 
             services.AddScoped<IJwtGenerator, JwtGenerator>();
+            services.AddScoped<IAccountService, AccountService>();
 
             var config = new MapperConfiguration(cfg =>
             {

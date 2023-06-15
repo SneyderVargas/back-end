@@ -1,4 +1,6 @@
-﻿namespace login.Dtos.Security
+﻿using System.Collections;
+
+namespace login.Dtos.Security
 {
     public class LoginResponseDto
     {

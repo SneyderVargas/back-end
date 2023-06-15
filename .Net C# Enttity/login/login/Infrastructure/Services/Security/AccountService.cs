@@ -183,5 +183,18 @@ namespace login.Infrastructure.Services.Security
 
             return user;
         }
+        public async Task<(bool Succeeded, string Message)> LogoutAsync(string userName, CancellationToken ct)
+        {
+            var userEntity = await _userManager.FindByNameAsync(userName);
+            if (userEntity == null)
+                return (false, SecurityMsg.UserPasswordInvalid);
+
+            // Actualizar usuario
+            userEntity.IsLoggedIn = false;
+            userEntity.LogInTimeout = DateTime.MinValue;
+            await _userManager.UpdateAsync(userEntity);
+
+            return (true, SecurityMsg.UserLogoutSucceeded);
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace login.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class AccountController: Controller
+    public class AccountController : Controller
     {
         private readonly IMapper _mapper;
         private readonly IAccountService _accountService;
@@ -27,7 +27,7 @@ namespace login.Controllers
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto request, CancellationToken ct)
-        {                
+        {
             try
             {
                 if (!ModelState.IsValid)
@@ -88,6 +88,33 @@ namespace login.Controllers
             catch (Exception ex)
             {
                 var x = ex.Message;
+                return null;
+            }
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Logout([FromBody] LogoutRequestDto request, CancellationToken ct)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(new ApiErrorDto(ModelState));
+
+                var (succeeded, message) = await _accountService.LogoutAsync(request.UserName, ct);
+                if (!succeeded)
+                {
+                    return BadRequest(new ApiErrorDto
+                    {
+                        Message = SecurityMsg.AccountLoginError,
+                        Detail = message
+                    });
+                }
+
+                return Ok(new ApiSingleResponseDto(message));
+            }
+            catch (Exception ex)
+            {
+                var e = ex.Message;
                 return null;
             }
         }

@@ -5,5 +5,6 @@ namespace login.Infrastructure.Services.Security
     public interface IAccountService
     {
         Task<(bool Success, string Message, User User, List<PermissionCodes> Permissions, int AdId)> Login (string UserName, string Password, CancellationToken ct);
+        Task<(bool Succeeded, string Message)> LogoutAsync(string userName, CancellationToken ct);
     }
 }
