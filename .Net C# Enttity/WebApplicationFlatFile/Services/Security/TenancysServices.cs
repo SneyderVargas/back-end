@@ -40,8 +40,9 @@ namespace AccountControll.Services.Security
             {
                 var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
                 var pagedData = await _dbContext.admTenancysEntities.Skip((validFilter.PageNumber - 1) * validFilter.PageSize).Take(validFilter.PageSize).ToListAsync();
+                var pageDataNull = pagedData.Count != 0 ? pagedData.Count : 0;
                 var totalRecords = await _dbContext.admTenancysEntities.CountAsync();
-                return (true, null, new PagedResponse<List<AdmTenancysEntity>>(pagedData, validFilter.PageNumber, validFilter.PageSize));
+                return (true, null, new PagedResponse<List<AdmTenancysEntity>>(pagedData, validFilter.PageNumber, validFilter.PageSize, pageDataNull, totalRecords));
 
             }
             catch (Exception ex)
